@@ -1,0 +1,13 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /
+permissions:
+  - object: /home/ubuntu/docker.sh
+    mode: 755
+hooks:
+  AfterInstall:
+    - location: docker.sh
+      timeout: 300
+      runas: root
